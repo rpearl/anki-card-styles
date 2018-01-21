@@ -21,6 +21,11 @@ ruby rb {}
 /*	background: url("_testbg1.jpg");*/
 	background-attachment: fixed;
 	background-position: center;
+	position: relative;
+}
+
+#qa {
+	background: inherit;
 }
 	
 	
@@ -33,21 +38,25 @@ ruby rb {}
 	overflow: hidden;
 	background: inherit;
 	border-radius: 10px;
+	z-index: 0;
+	position: relative;
 }
 
 .blurred-bg:after{
 	background: inherit; 
+	display: block;
+	content: '';
 	width: 150%;
 	height: 150%;
 	position: absolute;
 	left: -25%;
-	top: -25%
+	top: -25%;
 	filter: blur(10px);
-	z-index: 0;
+	z-index: -1;
 }
 
-.blurred-bg .content {
-	z-index: 1;
+.frontbg, .backbg {
+	z-index: 2;
 }
 
 /*partial transparency!*/
